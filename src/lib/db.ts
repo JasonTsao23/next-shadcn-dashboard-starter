@@ -4,6 +4,9 @@ import { drizzle } from 'drizzle-orm/neon-http';
 // 调试输出
 console.log('数据库URL是否存在:', !!process.env.DATABASE_URL);
 
+// 配置 neon
+neonConfig.fetchConnectionCache = true;
+
 // 使用环境变量中的数据库连接字符串
 const sql = process.env.DATABASE_URL
   ? neon(process.env.DATABASE_URL)
